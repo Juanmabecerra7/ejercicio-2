@@ -1,0 +1,39 @@
+class Viajeros:
+    __num = ""
+    __dni = ""
+    __nombre = ""
+    __apellido = ""
+    __millas_acum = ""
+    def __init__ (self, num, dni, nombre, apellido, millas_acum):
+        self.__num = num
+        self.__dni = dni
+        self.__nombre = nombre
+        self.__apellido = apellido
+        self.__millas_acum = millas_acum
+
+    def cantidadtotalmillas (self):
+        return self.__millas_acum
+
+    def acumularmillas(self, millas):
+        self.millas_acum = int(self.__millas_acum) + millas
+        return self.millas_acum
+
+    def canjearmillas(self, canjear):
+        if canjear <= int(self.__millas_acum):
+            self.__millas_acum = int(self.__millas_acum) - canjear
+            return self.__millas_acum
+
+    def getNumeroViajero (self):
+        return self.__num
+
+    def __str__(self):
+        return str(self.__num)+" "+self.__dni+" "+self.__nombre+" "+self.__apellido+" "+self.__millas_acum+" "
+    
+    def __add__(self):
+        millas_total = 0
+        millas_total = millas_total + int(self.__millas_acum)
+        return millas_total
+    
+    def __sub__(self, canjear):
+        self.__millas_acum = int(self.__millas_acum) - canjear
+        return self.__millas_acum
