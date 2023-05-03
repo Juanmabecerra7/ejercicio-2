@@ -29,11 +29,3 @@ class Viajeros:
     def __str__(self):
         return str(self.__num)+" "+self.__dni+" "+self.__nombre+" "+self.__apellido+" "+self.__millas_acum+" "
     
-    def __add__(self):
-        millas_total = 0
-        millas_total = millas_total + int(self.__millas_acum)
-        return millas_total
-    
-    def __sub__(self, canjear):
-        self.__millas_acum = int(self.__millas_acum) - canjear
-        return self.__millas_acum
